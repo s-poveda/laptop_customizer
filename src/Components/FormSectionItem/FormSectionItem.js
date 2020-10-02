@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import slugify from 'slugify';
+import './FormSectionItem.css';
 import USCurrencyFormat from '../../currencyFormat';
 
 class FormSectionItem extends Component {
@@ -12,7 +13,7 @@ class FormSectionItem extends Component {
 	render() {
 		const {id, featureName, selected, option, updateFeature } = this.props;
 		return (
-			<div>
+			<div className='feature__item'>
 				<input
 				checked={selected}
 				type="radio"

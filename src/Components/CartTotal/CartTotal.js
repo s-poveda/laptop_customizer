@@ -1,4 +1,5 @@
 import React from 'react';
+import './CartTotal.css';
 import USCurrencyFormat from '../../currencyFormat';
 
 const CartTotal = (props) => {

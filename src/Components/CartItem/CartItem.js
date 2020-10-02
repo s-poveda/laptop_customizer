@@ -1,4 +1,5 @@
 import React from 'react';
+import './CartItem.css';
 import USCurrencyFormat from	'../../currencyFormat';
 
 const CartItem = (props) => {

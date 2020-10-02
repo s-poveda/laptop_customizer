@@ -1,0 +1,7 @@
+.feature + .feature {
+  margin-top: 0.8rem;
+}
+
+.main__form {
+  flex: 4;
+}

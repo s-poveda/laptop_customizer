@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Form.css';
 import FormSection from '../FormSection/FormSection';
 
 class CustomizeForm extends Component {
@@ -7,7 +8,6 @@ class CustomizeForm extends Component {
 				const featureHash = feature + '-' + idx;
 				return <FormSection key={featureHash}
 				updateFeature={this.props.updateFeature}
-				className='feature'
 				header={feature}
 				features={this.props.features}
 				featureOptions={this.props.features[feature]}

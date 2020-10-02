@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import slugify from 'slugify';
+import './FormSection.css';
 import FormSectionItem from '../FormSectionItem/FormSectionItem';
 
 class FormSection extends Component {

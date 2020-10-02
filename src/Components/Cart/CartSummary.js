@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './CartSummary.css';
 import CartTotal from '../CartTotal/CartTotal';
 import CartItem from '../CartItem/CartItem';
 
@@ -18,14 +19,6 @@ class CartSummary extends Component {
 		return Object.keys(this.props.selected).map((feature, idx) => {
 			const featureHash = feature + '-' + idx;
 			const selectedOption = this.props.selected[feature];
-
-			// <div className="summary__option" key={featureHash}>
-			// 	<div className="summary__option__label">{feature} </div>
-			// 	<div className="summary__option__value">{selectedOption.name}</div>
-			// 	<div className="summary__option__cost">
-			// 		{USCurrencyFormat.format(selectedOption.cost)}
-			// 	</div>
-			// </div>
 			return <CartItem key={featureHash} selectedOption={selectedOption} featureName={feature}/>
 		});
 	}
