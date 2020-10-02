@@ -9,10 +9,8 @@ class FormSectionItem extends Component {
 		featureName: ''
 	}
 
-// TODO: wire onclick callback(s)
-
 	render() {
-		const {id, featureName, selected, option } = this.props;
+		const {id, featureName, selected, option, updateFeature } = this.props;
 		return (
 			<div>
 				<input
@@ -21,7 +19,7 @@ class FormSectionItem extends Component {
 				id={id}
 				className="feature__option"
 				name={slugify(featureName)}
-				onChange={e => this.props.updateFeature(featureName, option)}
+				onChange={e => updateFeature(featureName, option)}
 				/>
 				<label htmlFor={id} className="feature__label">
 				{option.name} ({USCurrencyFormat.format(option.cost)})

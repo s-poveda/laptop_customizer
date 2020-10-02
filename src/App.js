@@ -48,7 +48,12 @@ class App extends Component {
       <div className="App">
         <Header title='ELF Computing | Laptops' />
         <main>
-          <CustomizeForm title='Customize your laptop' features={this.props.features} selected={this.state.selected}/>
+          <CustomizeForm
+					updateFeature={this.updateFeature}
+					title='Customize your laptop'
+					features={this.props.features}
+					selected={this.state.selected}
+					/>
           <CartSummary selected={this.state.selected}/>
         </main>
       </div>

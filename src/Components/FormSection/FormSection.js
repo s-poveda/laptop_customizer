@@ -10,10 +10,11 @@ class FormSection extends Component {
 	}
 
 	generateFormItems () {
-		const {header, selectedFeature } = this.props;
+		const {header, selectedFeature, updateFeature } = this.props;
 		return this.props.featureOptions.map( (option , index) => {
 			const itemHash = slugify(JSON.stringify(option));
 			return <FormSectionItem
+			updateFeature={updateFeature}
 			key={itemHash}
 			id={itemHash}
 			featureName={header}

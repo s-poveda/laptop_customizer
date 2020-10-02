@@ -6,6 +6,7 @@ class CustomizeForm extends Component {
 			return Object.keys(this.props.features).map((feature, idx) => {
 				const featureHash = feature + '-' + idx;
 				return <FormSection key={featureHash}
+				updateFeature={this.props.updateFeature}
 				className='feature'
 				header={feature}
 				features={this.props.features}
