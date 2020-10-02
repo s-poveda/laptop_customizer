@@ -3,11 +3,16 @@ import React, { Component } from 'react';
 // Normalizes string as a slug - a string that is safe to use
 // in both URLs and html attributes
 import './App.css';
-import USCurrencyFormat from './currencyFormat';
-import CustomizeForm from './Components/CustomizeForm/Form'
 import Header from './Components/Header/Header';
+import CustomizeForm from './Components/CustomizeForm/Form'
+import CartSummary from './Components/Cart/CartSummary';
 
 class App extends Component {
+
+	static defaultProps = {
+		features: {}
+	}
+
   state = {
     selected: {
       Processor: {
@@ -38,42 +43,13 @@ class App extends Component {
   };
 
   render() {
-    const summary = Object.keys(this.state.selected).map((feature, idx) => {
-      const featureHash = feature + '-' + idx;
-      const selectedOption = this.state.selected[feature];
 
-      return (
-        <div className="summary__option" key={featureHash}>
-          <div className="summary__option__label">{feature} </div>
-          <div className="summary__option__value">{selectedOption.name}</div>
-          <div className="summary__option__cost">
-            {USCurrencyFormat.format(selectedOption.cost)}
-          </div>
-        </div>
-      );
-    });
-//================= summary ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-    const total = Object.keys(this.state.selected).reduce(
-      (acc, curr) => acc + this.state.selected[curr].cost,
-      0
-    );
-// ^^^^^^^^^^^^^^^^^^^^^^^^ total calculation ^^^^^^^^^^^^^^^^
     return (
       <div className="App">
         <Header title='ELF Computing | Laptops' />
         <main>
           <CustomizeForm title='Customize your laptop' features={this.props.features} selected={this.state.selected}/>
-          <section className="main__summary">
-            <h2>Your cart</h2>
-            {summary}
-            <div className="summary__total">
-              <div className="summary__total__label">Total</div>
-              <div className="summary__total__value">
-                {USCurrencyFormat.format(total)}
-              </div>
-            </div>
-          </section>
+          <CartSummary selected={this.state.selected}/>
         </main>
       </div>
     );

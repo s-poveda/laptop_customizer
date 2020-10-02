@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import FormSection from '../FormSection/FormSection';
 
 class CustomizeForm extends Component {
-	getFormSectionRender = () => {
+	getFormSectionsRender = () => {
 			return Object.keys(this.props.features).map((feature, idx) => {
 				const featureHash = feature + '-' + idx;
 				return <FormSection key={featureHash}
@@ -16,7 +16,7 @@ class CustomizeForm extends Component {
 		}
 
 	render () {
-		const features = this.getFormSectionRender();
+		const features = this.getFormSectionsRender();
 		return (
 			<form className="main__form">
 				<h2>{this.props.title? this.props.title : ''}</h2>
